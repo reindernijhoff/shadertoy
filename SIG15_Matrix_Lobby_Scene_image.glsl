@@ -375,7 +375,7 @@ void renderExplosionDust( const in vec3 ro, const in vec3 rd, in float dist, con
                                     * fade 
                                     * abs( grd.x )
                                     * (1.-smoothstep( 0.8*maxRadius, maxRadius, radius ));            
-            float excol = mix( col.x, 1., pow(1.-2.*texture2D( iChannel2,ho+(pos.yz-ep.yz)*zoom + down, -100.0 ).x,3.) );               
+            float excol = mix( col.x, 1., pow( max(1.-2.*texture2D( iChannel2,ho+(pos.yz-ep.yz)*zoom + down, -100.0 ).x,0.),3.) );               
             col.x = mix( col.x, excol, l);
             col.y += l;
         }
@@ -389,7 +389,7 @@ void renderExplosionDust( const in vec3 ro, const in vec3 rd, in float dist, con
                                     * fade 
                                     * abs( grd.z )
                                     * (1.-smoothstep( 0.8*maxRadius, maxRadius, radius ));
-            float excol = mix( col.x, 1., pow(1.-2.*texture2D( iChannel2,ho+(pos.yx-ep.yx)*zoom + down, -100.0 ).x,3.) );               
+            float excol = mix( col.x, 1., pow( max(1.-2.*texture2D( iChannel2,ho+(pos.yx-ep.yx)*zoom + down, -100.0 ).x,0.),3.) );   
             col.x = mix( col.x, excol, l);
             col.y += l;
         }
@@ -451,7 +451,7 @@ vec3 render( const in vec3 ro, const in vec3 rd, in float time, const in float f
     renderExplosionDust( ro, rd, t, ep5, col, time, grd );
     
  // add fog
-    vec3 dcol = vec3( col.x );
+    vec3 dcol = vec3( max(col.x,0.) );
     dcol = mix( vec3(.5), dcol, exp( -t*(.02*fog+.005*col.y) ) );
         
     return pow( dcol, vec3(0.45) );
