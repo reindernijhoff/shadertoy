@@ -1,4 +1,4 @@
-// Created by Reinder Nijhoff 2015
+﻿// Created by Reinder Nijhoff 2015
 // @reindernijhoff
 //
 // https://www.shadertoy.com/view/MtsXzf
@@ -14,13 +14,13 @@
 #define BPM             (140.0)
 #define STEP            (4.0 * BPM / 60.0)
 #define ISTEP           (1./STEP)
-#define LOOPCOUNT       (16.)
-#define STT(t)          (t*(60.0/BPM))
+#define LOOPCOUNT		(16.)
+#define STT(t)			(t*(60.0/BPM))
 
 #define PI2 6.283185307179586476925286766559
 
 #define D 36.71
-#define A 55.00 
+#define A 55.00	
 #define B 61.74
 #define C 65.41
 
@@ -29,9 +29,9 @@
 
 #define MOD2 vec2(.16632,.17369)
 float hash(const in float p) { // by Dave Hoskins
-    vec2 p2 = fract(vec2(p) * MOD2);
+	vec2 p2 = fract(vec2(p) * MOD2);
     p2 += dot(p2.yx, p2.xy+19.19);
-    return fract(p2.x * p2.y);
+	return fract(p2.x * p2.y);
 }
 
 float sine(const in float x) {
@@ -43,11 +43,11 @@ float loop(const in float t, const in float steps) {
 }
 
 float distortion(const in float s, const in float d) {
-    return clamp(s * d, -1.0, 1.0);
+	return clamp(s * d, -1.0, 1.0);
 }
 
 float quan(const in float s, const in float c) {
-    return floor(s / c) * c;
+	return floor(s / c) * c;
 }
 
 bool inLoop( float time, float s, float e ) {
@@ -67,25 +67,25 @@ float snare(const in float t, const in float f0) {
 }
 
 float kick(float tb) {
-    const float aa = 5.0;
-    tb = sqrt(tb * aa) / aa;
-    
-    float amp = exp(max(tb - 0.015, 0.0) * -5.0);
-    float v = sine(tb * 100.0) * amp;
-    v += distortion(v, 4.0) * amp;
-    return v;
+	const float aa = 5.0;
+	tb = sqrt(tb * aa) / aa;
+	
+	float amp = exp(max(tb - 0.015, 0.0) * -5.0);
+	float v = sine(tb * 100.0) * amp;
+	v += distortion(v, 4.0) * amp;
+	return v;
 }
 
 float bass(const in float time, const in float freq, const in float duration) {
     float ph = 1.0;
     ph *= sin(6.2831*freq*time);
-    ph *= 0.2+0.8*max(0.0,6.0-0.01*freq);
-    ph *= exp(-time*freq*0.2);
+    ph *= 0.1+0.9*max(0.0,6.0-0.01*freq);
+    ph *= exp(-time*freq*0.3);
     
     
     float y = 0.;
     y += 0.70*sin(1.00*PI2*freq*time+ph);//*exp(-0.07*time);
-    y += 0.20*sin(2.01*PI2*freq*time+ph);//*exp(-0.11*time);
+    y += 0.90*sin(2.01*PI2*freq*time+ph);//*exp(-0.11*time);
 
     y += 0.145*y*y*y;   
 
@@ -107,7 +107,7 @@ float lift(float time) {
 }
 
 float gun(float time, float f, const in float d) {
-    return distortion( texture2D( iChannel0, vec2(time*5.7864, time*6.9732)*f, -99. ).x *exp(-10.0*time)
+    return distortion( textureLod( iChannel0, vec2(time*5.7864, time*6.9732)*f, 0. ).x *exp(-10.0*time)
                        * smoothstep(0.,0.1,time) * (1.-smoothstep(0.5,.6,time)), d);
 }
 
@@ -137,7 +137,7 @@ float loopDrums(const in float t) {
     
     // base
     N(3.);N(7.);N(1.);N(5.);
-    r = kick( (t-x)*ISTEP*1.2 );
+	r = kick( (t-x)*ISTEP*1.2 );
     
     // bell
     x = b = 0.;
@@ -174,7 +174,7 @@ float loopGun( const in float time, const in float interval, const in float nums
     for( float sh = 0.; sh<2.5; sh+=1.) {
         if( sh < numshots ) {
             float g = (0.5+0.5*hash(sh+.5))*gun( it - sh*shotdelay - .5*shotdelay*hash(sh), mix(minf, maxf, hash(sh+.25)), 1.5 );
-            m = m+g - abs(m)*g;
+    		m = m+g - abs(m)*g;
         }
     }
  
@@ -194,7 +194,7 @@ float loopGun( const in float time, const in float interval, const in float nums
 // music
 
 float loopMusic(const in float time) {
-    float mtime = loop( time, 16. );
+	float mtime = loop( time, 16. );
     float t = mtime * STEP;
     float m = 1.;
     
@@ -217,10 +217,10 @@ float loopMusic(const in float time) {
 }
 
 float loopIntro(const in float time) {
-    float mtime = loop( time, 16. );
+	float mtime = loop( time, 16. );
     float t = mtime * STEP;
     
-    if( inLoop( time, .74, 5.25 ) ) {
+	if( inLoop( time, .74, 5.25 ) ) {
         return loopBassIntro( t );
     }
     return 0.;
@@ -293,7 +293,7 @@ vec2 mainSound(float time) {
 #define E5(a,b,c,d) t+=a;if( time >= t ){exTime2=exTime1;exTime1=t;}
 
 void initExplosions( in float time ) {
-    exTime1 = exTime2 = -1000.;
+	exTime1 = exTime2 = -1000.;
     
     float t = 0.;    
     E1(STT(21.), 16., 3.9, 8.2 );
