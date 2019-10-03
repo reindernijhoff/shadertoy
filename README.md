@@ -1,6 +1,6 @@
 ﻿# Shadertoy shaders
 
-This is a backup of all my public WebGL fragment shaders that I have published on [Shadertoy](https://shadertoy.com).
+This is a backup of all WebGL fragment shaders that I have published on [Shadertoy](https://shadertoy.com).
 
 | Thumbnail      | Title | Published     |
 |   :----:   | :---        |         ---: |
