@@ -1,5 +1,5 @@
 ﻿// Created by Reinder Nijhoff 2014
-// License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+// Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 // @reindernijhoff
 //
 // https://www.shadertoy.com/view/Xtf3zn

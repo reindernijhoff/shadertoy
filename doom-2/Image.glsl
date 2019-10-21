@@ -1,5 +1,5 @@
 ﻿// Doom 2. Reinder Nijhoff 2013
-// License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+// Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 // @reindernijhoff
 //
 // https://www.shadertoy.com/view/lsB3zD

@@ -1,5 +1,5 @@
 ﻿// Robotic Arm. Created by Reinder Nijhoff 2019
-// License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+// Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 // @reindernijhoff
 //
 // https://www.shadertoy.com/view/tlSSDV

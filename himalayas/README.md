@@ -3,6 +3,7 @@
 
 ![thumbnail](./thumbnail.jpg)
 
+
 This is my first attempt to render volumetric clouds in a fragment shader.
 
 I started this shader by trying to implement the clouds of Horizon Zero Dawn, as

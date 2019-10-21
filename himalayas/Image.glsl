@@ -1,4 +1,5 @@
 ﻿// Himalayas. Created by Reinder Nijhoff 2018
+// Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 // @reindernijhoff
 //
 // https://www.shadertoy.com/view/MdGfzh
