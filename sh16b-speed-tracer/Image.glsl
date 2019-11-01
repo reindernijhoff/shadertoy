@@ -140,12 +140,12 @@ void getSphereOffset( const in vec2 grid, inout vec2 center ) {
 
 void getMovingSpherePosition( const in vec2 grid, const in vec2 sphereOffset, inout vec4 center, inout vec3 speed ) {
 	// falling?
-	float s = 0.3+hash12( grid );
+	float s = 0.1+hash12( grid );
     
-	float t = 14.*s + time/s;	
-	float y =  s * MAXHEIGHT * abs( cos( t ) );
+	float t = fract(14.*s + time/s*.3);	
+	float y =  s * MAXHEIGHT * abs( 4.*t*(1.-t) );
     
-    speed = vec3(0, MAXHEIGHT * abs( sin( t ) ), 0 ) * (1./FPS);
+    speed = vec3(0, s * MAXHEIGHT * ( 8.*t - 4. ), 0 ) * (1./FPS);
     
 	vec2 offset = grid + sphereOffset;
 	

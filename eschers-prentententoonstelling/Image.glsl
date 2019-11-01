@@ -4,12 +4,13 @@
 //
 // https://www.shadertoy.com/view/Mdf3zM
 //
-// Study of the transformation of Escher in 'the prentententoonstelling'
+// Study of the transformation of Escher in 'the prentententoonstelling' 
+// ```
+// h(w) = w^((2πi + log scale)/(2πi))
+// ```
+// Distance field functions by Inigo Quilez.
 //
-// http://www.ams.org/notices/200304/fea-escher.pdf
-// h(w) = wÎ± = w^((2Ï€i+log scale)/(2Ï€i))
-//
-// distancefield functions by inigo quilez.
+// [1] http://www.ams.org/notices/200304/fea-escher.pdf
 //
 
 // #define SHADOW
@@ -24,7 +25,7 @@ float deformationScale, zoom;
 vec2 escherDeformation( in vec2 uv ) {
 	
 // http://www.ams.org/notices/200304/fea-escher.pdf
-// h(w) = wÎ± = w^((2Ï€i+log scale)/(2Ï€i))
+// h(w) = w^((2πi + log scale)/(2πi))
 	
 	float lnr = log(length(uv));
 	float th = atan( uv.y, uv.x )+(0.4/256.)*deformationScale;

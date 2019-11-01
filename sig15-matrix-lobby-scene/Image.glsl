@@ -4,6 +4,12 @@
 //
 // https://www.shadertoy.com/view/MtsXzf
 //
+//   *Created for the Shadertoy Competition 2015*
+//
+// Theme: Your Favorite Movie/Game Moment
+//
+// https://www.shadertoy.com/eventsAugust2015.php5
+//
 
 #define HIGHQUALITY 1
 #define RENDERDEBRIS 0
@@ -175,15 +181,15 @@ float mapDamageHigh( vec3 p ) {
 vec3 calcNormalDamage( in vec3 pos, in float eps ) {
     if( pos.y < 0.001 && (mapDamageHigh(pos)-map(pos)) < eps ) {   		
 	        return vec3( 0., 1., 0. );
+    } else {    
+        vec2 e = vec2(1.0,-1.0)*(0.5773*eps);
+        vec3 n =  normalize( e.xyy*mapDamageHigh( pos + e.xyy ) + 
+                             e.yyx*mapDamageHigh( pos + e.yyx ) + 
+                             e.yxy*mapDamageHigh( pos + e.yxy ) + 
+                             e.xxx*mapDamageHigh( pos + e.xxx ) );
+        n = bumpMapNormal( pos, n );
+        return n;  
     }
-    
-    vec2 e = vec2(1.0,-1.0)*(0.5773*eps);
-    vec3 n =  normalize( e.xyy*mapDamageHigh( pos + e.xyy ) + 
-			     		 e.yyx*mapDamageHigh( pos + e.yyx ) + 
-					  	 e.yxy*mapDamageHigh( pos + e.yxy ) + 
-					  	 e.xxx*mapDamageHigh( pos + e.xxx ) );
-    n = bumpMapNormal( pos, n );
-    return n;    
 }
 
 //----------------------------------------------------------------------

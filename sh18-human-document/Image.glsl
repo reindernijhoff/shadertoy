@@ -4,7 +4,7 @@
 //
 // https://www.shadertoy.com/view/XtcyW4
 //
-//   * Created for the Shadertoy Competition 2018 *
+//   *Created for the Shadertoy Competition 2018*
 //
 // 07/29/2018 I have made some optimizations and bugfixes, so I could enable AA. 
 // 

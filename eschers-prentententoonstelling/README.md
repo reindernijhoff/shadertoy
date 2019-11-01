@@ -5,11 +5,13 @@
 
 
 Study of the transformation of Escher in 'the prentententoonstelling'
+```
+h(w) = w^((2πi + log scale)/(2πi))
+```
+Distance field functions by Inigo Quilez.
 
-http://www.ams.org/notices/200304/fea-escher.pdf
-h(w) = wÎ± = w^((2Ï€i+log scale)/(2Ï€i))
+[1] http://www.ams.org/notices/200304/fea-escher.pdf
 
-distancefield functions by inigo quilez.
 
 
 ## Shaders
@@ -22,6 +24,7 @@ Source: [Image.glsl](./Image.glsl)
 * [Escher's prentententoonstelling](https://www.shadertoy.com/view/Mdf3zM) on Shadertoy
 * [An overview of all my shaders](https://reindernijhoff.net/shadertoy/)
 * [My public profile](https://www.shadertoy.com/user/reinder) on Shadertoy
+* [http://www.ams.org/notices/200304/fea-escher.pdf](http://www.ams.org/notices/200304/fea-escher.pdf)
 
 ## License
 

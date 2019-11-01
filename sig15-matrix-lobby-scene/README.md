@@ -3,7 +3,14 @@
 
 ![thumbnail](./thumbnail.jpg)
 
-PLEASE REWIND ON FIRST LOAD (âª), TO MAKE SURE AUDIO IS IN SYNC.
+
+*Created for the Shadertoy Competition 2015*
+
+Theme: Your Favorite Movie/Game Moment
+
+https://www.shadertoy.com/eventsAugust2015.php5
+
+
 ## Shaders
 
 ### Sound

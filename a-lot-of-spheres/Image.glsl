@@ -15,7 +15,7 @@
 #define MAXDISTANCE 400.
 #define GRIDSIZE 8.
 #define GRIDSIZESMALL 5.
-#define MAXHEIGHT 10.
+#define MAXHEIGHT 30.
 #define SPEED 0.5
 
 #define time iTime
@@ -86,10 +86,10 @@ void getSphereOffset( vec2 grid, inout vec2 center ) {
 }
 void getMovingSpherePosition( vec2 grid, vec2 sphereOffset, inout vec3 center ) {
 	// falling?
-	float s = 0.1+hash( grid.x*1.23114+5.342+754.324231*grid.y );
-	float t = 14.*s + time/s;
+	float s = 0.1+hash( grid.x*1.23114+5.342+74.324231*grid.y );
+	float t = fract(14.*s + time/s*.3);
 	
-	float y =  s * MAXHEIGHT * abs( cos( t ) );
+	float y =  s * MAXHEIGHT * abs( 4.*t*(1.-t) );
 	vec2 offset = grid + sphereOffset;
 	
 	center = vec3( offset.x, y, offset.y ) + 0.5*vec3( GRIDSIZE, 2., GRIDSIZE );
