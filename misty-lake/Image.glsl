@@ -94,7 +94,7 @@ float cloudMap( const in vec3 p, const in float ani ) {
 	float den = -1.8+cos(r.y*5.-4.3);
 		
 	float f;
-	vec3 q = 2.5*r*vec3(0.75,1.0,0.75)  + vec3(1.0,1.0,15.0)*ani*0.15;
+	vec3 q = 2.5*r*vec3(0.75,1.0,0.75)  + vec3(1.0,2.0,1.0)*ani*0.15;
     f  = 0.50000*noise( q ); q = q*2.02 - vec3(-1.0,1.0,-1.0)*ani*0.15;
     f += 0.25000*noise( q ); q = q*2.03 + vec3(1.0,-1.0,1.0)*ani*0.15;
     f += 0.12500*noise( q ); q = q*2.01 - vec3(1.0,1.0,-1.0)*ani*0.15;

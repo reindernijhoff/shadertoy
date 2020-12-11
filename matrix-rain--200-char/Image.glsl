@@ -11,7 +11,7 @@
 // All credits go to FabriceNeyret2
 //
 
-#define R fract(43.*sin(p.x*7.+p.y*8.))
+#define R fract(43.*sin(dot(p,p)))
 
 void mainImage( out vec4 o, vec2 i) {
     vec2 j = fract(i*=.1), 

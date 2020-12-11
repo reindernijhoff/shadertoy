@@ -140,7 +140,7 @@ vec3 render( const in vec3 ro, const in vec3 rd ) {
 void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
     vec2 uv = fragCoord/iResolution.xy;
     vec2 mo = iMouse.xy/iResolution.xy - .5;
-    if(iMouse.w <= 0.) {
+    if(iMouse.z <= 0.) {
         mo = vec2(.2*sin(-iTime*.1+.3)+.045,.1-.2*sin(-iTime*.1+.3));
     }
     float a = 5.05;

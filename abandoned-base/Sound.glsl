@@ -129,7 +129,7 @@ vec2 getSounds(in float t, in float z) {
     return 6.*m2;
 }
 
-vec2 mainSound(float time) {
+vec2 mainSound( in int samp,float time) {
     float z = time*2.;
 	return getSounds(time, z);
 }

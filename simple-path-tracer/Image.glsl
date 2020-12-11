@@ -193,15 +193,12 @@ vec3 getBRDFRay( in vec3 n, const in vec3 rd, const in float m, inout bool specu
         float r0 = (n1-n2)/(n1+n2); r0 *= r0;
 		float fresnel = r0 + (1.-r0) * pow(1.0-abs(ndotr),5.);
         
-        vec3 ref;
-        
-        if( hash1(seed) < fresnel ) {
+        vec3 ref =  refract( rd, n, n2/n1 );        
+        if( ref == vec3(0) || hash1(seed) < fresnel ) {
             ref = reflect( rd, n );
-        } else {
-            ref = refract( rd, n, n2/n1 );
-        }
+        } 
         
-        return ref; // normalize( ref + 0.1 * r );
+        return ref;
 	}
 }
 
@@ -229,18 +226,18 @@ vec3 traceEyePath( in vec3 ro, in vec3 rd, const in bool directLightSampling, in
             } else {
                 tcol += fcol*LIGHTCOLOR;
             }
-         //   basecol = vec3(0.);	// the light has no diffuse component, therefore we can return col
             return tcol;
         }
         
         ro = ro + res.x * rd;
         rd = getBRDFRay( normal, rd, res.y, specularBounce, seed );
-        
-        fcol *= matColor( res.y );
-
-        vec3 ld = sampleLight( ro, seed ) - ro;
+            
+        if(!specularBounce || dot(rd,normal) < 0.) {  
+        	fcol *= matColor( res.y );
+        }
         
         if( directLightSampling ) {
+        	vec3 ld = sampleLight( ro, seed ) - ro;
 			vec3 nld = normalize(ld);
             if( !specularBounce && j < EYEPATHLENGTH-1 && !intersectShadow( ro, nld, length(ld)) ) {
 

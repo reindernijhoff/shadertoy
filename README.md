@@ -4,6 +4,7 @@ This is a backup of all WebGL fragment shaders that I have published on [Shadert
 
 | Thumbnail      | Title | Published     |
 |   :----:   | :---        |         ---: |
+| <img src="./cameras-and-lenses/thumbnail.jpg" width="100px" /> | [Cameras and Lenses](./cameras-and-lenses) | 2020-12-09|
 | <img src="./inverse-barrel-distortion/thumbnail.jpg" width="100px" /> | [Inverse Barrel Distortion](./inverse-barrel-distortion) | 2019-10-22|
 | <img src="./robotic-arm-hunting-lights/thumbnail.jpg" width="100px" /> | [Robotic Arm Hunting Lights](./robotic-arm-hunting-lights) | 2019-08-29|
 | <img src="./gaussian-weights-and-fake-ao/thumbnail.jpg" width="100px" /> | [Gaussian Weights and Fake AO](./gaussian-weights-and-fake-ao) | 2019-06-24|

@@ -171,7 +171,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
     
     // DOF
     vec3 fp = ro + rd * fpd;
-    ro = ro + ca * vec3(randomInUnitDisk(seed), 0.)*.03;
+    ro = ro + ca * vec3(randomInUnitDisk(seed), 0.)*.02;
     rd = normalize(fp - ro);
     
     vec3 col = render(ro, rd, seed);           

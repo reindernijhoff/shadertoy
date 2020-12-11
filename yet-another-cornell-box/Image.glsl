@@ -309,7 +309,7 @@ vec3 color(in ray r) {
     
     for (int i=0; i<MAX_RECURSION && world_hit(r, EPSILON, MAX_FLOAT, rec); i++) {
         if (rec.mat.type == DIFFUSE_LIGHT) { // direct light sampling code
-            return i == 0 ? rec.mat.color : vec3(0);
+            return i == 0 ? rec.mat.color : emitted;
         }
 
         vec3 attenuation;

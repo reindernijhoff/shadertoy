@@ -10,7 +10,6 @@
 
 #define RAYCASTSTEPS 40
 
-#define EXPOSURE 0.9
 #define EPSILON 0.0001
 #define MAXDISTANCE 400.
 #define GRIDSIZE 8.
@@ -113,7 +112,7 @@ vec3 trace(vec3 ro, vec3 rd, out vec3 intersection, out vec3 normal, out float d
 		dist = distcheck;
 		material = 1;
 		normal = vec3( 0., 1., 0. );
-		col = vec3( 1. );
+		col = vec3( 0.25 );
 	} else {
 		col = vec3( 0. );
 	}
@@ -144,7 +143,7 @@ vec3 trace(vec3 ro, vec3 rd, out vec3 intersection, out vec3 normal, out float d
 		if( intersectUnitSphere( ro, rd, sphereCenter, distcheck, normalcheck ) && distcheck < dist ) {
 			dist = distcheck;
 			normal = normalcheck;
-			col = vec3( 2. );
+			col = getSphereColor( offset );
 			material = 3;
 		}
 		mm = step(dis.xyz, dis.zyx);
@@ -190,12 +189,12 @@ vec3 trace(vec3 ro, vec3 rd, out vec3 intersection, out vec3 normal, out float d
 					}
 #endif
 					color += col * lcolor * ( shadow * max( dot( normalize(lpos-intersection), normal ), 0.) *
-											 (1. - clamp( distance( lpos, intersection )/GRIDSIZE, 0., 1.) ) );
+											 clamp(10. / dot( lpos - intersection, lpos - intersection) - 0.075, 0., 1.)  );
 				}
 			}
 		} else {
 			// emitter
-			color = (1.5+dot(normal, vec3( 0.5, 0.5, -0.5) )) *getSphereColor( map );
+			color = (3.+2.*dot(normal, vec3( 0.5, 0.5, -0.5))) * getSphereColor( map );
 		}
 	}
 	return color;
@@ -230,13 +229,20 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
 
 #ifdef REFLECTION
 	if( material > 0 ) {
+    	float f = 0.04 * clamp(pow(1. + dot(rd, normal), 5.), 0., 1.);
+    	    
 		vec3 ro = intersection + EPSILON*normal;
 		rd = reflect( rd, normal );
-		col += 0.05 * trace(ro, rd, intersection, normal, dist, material);
+		vec3 refColor = trace(ro, rd, intersection, normal, dist, material);
+		if (material > 2) { 
+    		col += .5 * refColor; 
+		} else { // fresnell on floor
+		    col += f * refColor;
+		}
 	}
 #endif
 	
-	col = pow( col, vec3(EXPOSURE, EXPOSURE, EXPOSURE) );	
+	col = pow( col * .5, vec3(1./2.2) );	
 	col = clamp(col, 0.0, 1.0);
 	
 	// vigneting

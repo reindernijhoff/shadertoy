@@ -37,7 +37,7 @@
 
 #define EARTH_RADIUS    (1500000.) // (6371000.)
 #define CLOUDS_BOTTOM   (1350.)
-#define CLOUDS_TOP      (2150.)
+#define CLOUDS_TOP      (2350.)
 
 #define CLOUDS_LAYER_BOTTOM   (-150.)
 #define CLOUDS_LAYER_TOP      (-70.)
@@ -45,7 +45,7 @@
 #define CLOUDS_COVERAGE (.52)
 #define CLOUDS_LAYER_COVERAGE (.41)
 
-#define CLOUDS_DETAIL_STRENGTH (.2)
+#define CLOUDS_DETAIL_STRENGTH (.225)
 #define CLOUDS_BASE_EDGE_SOFTNESS (.1)
 #define CLOUDS_BOTTOM_SOFTNESS (.25)
 #define CLOUDS_DENSITY (.03)

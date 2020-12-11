@@ -4,6 +4,15 @@
 //
 // https://www.shadertoy.com/view/4tjGRh
 //
+// It uses code from the following shaders:
+//
+// Wet stone by TDM
+// Atmospheric Scattering by GLtracy
+// Seascape by TDM
+// Elevated and Terrain Tubes by IQ
+// LLamels by Eiffie
+// Lens flare by Musk
+// 
 
 //#define HIGH_QUALITY
 //#define MED_QUALITY

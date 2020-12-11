@@ -3,7 +3,17 @@
 
 ![thumbnail](./thumbnail.jpg)
 
-A seamless space-to-surface flight. This is a tribute to all the great shaders on Shadertoy! Use chrome without angle (or a Mac) and run this shader on med, or high settings (line 4 or 5) to get the full shader and the detail I was aiming for.
+
+It uses code from the following shaders:
+
+Wet stone by TDM
+Atmospheric Scattering by GLtracy
+Seascape by TDM
+Elevated and Terrain Tubes by IQ
+LLamels by Eiffie
+Lens flare by Musk
+
+
 ## Shaders
 
 ### Sound

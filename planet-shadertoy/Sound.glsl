@@ -45,7 +45,7 @@ vec2 Wind(float n) {
 
 
 
-vec2 mainSound(float time) {
+vec2 mainSound( in int samp,float time) {
     //16 - 38
  //   time -= 7.5;
     time *= .7;

@@ -52,18 +52,6 @@ vec3 cosWeightedRandomHemisphereDirection( const vec3 n, inout float seed ) {
     return normalize(rr);
 }
 
-bool modifiedRefract(const in vec3 v, const in vec3 n, const in float ni_over_nt, 
-                     out vec3 refracted) {
-    float dt = dot(v, n);
-    float discriminant = 1. - ni_over_nt*ni_over_nt*(1.-dt*dt);
-    if (discriminant > 0.) {
-        refracted = ni_over_nt*(v - n*dt) - n*sqrt(discriminant);
-        return true;
-    } else { 
-        return false;
-    }
-}
-
 vec3 modifyDirectionWithRoughness( const vec3 normal, const vec3 n, const float roughness, inout float seed ) {
     vec2 r = hash2(seed);
     
@@ -233,8 +221,12 @@ vec3 render( in vec3 ro, in vec3 rd, inout float seed ) {
                     ni_over_nt = 1./1.4;
                     cosine = -dot(rd, normal);
                 }
-                
-                if (modifiedRefract(rd, normalOut, ni_over_nt, refracted)) {
+            
+	            // Refract the ray.
+	            refracted = refract(normalize(rd), normalOut, ni_over_nt);
+    	        
+        	    // Handle total internal reflection.
+                if(refracted != vec3(0)) {
                 	float r0 = (1.-ni_over_nt)/(1.+ni_over_nt);
 	        		reflectProb = FresnelSchlickRoughness(cosine, r0*r0, roughness);
                 }

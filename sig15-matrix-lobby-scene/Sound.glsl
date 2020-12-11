@@ -246,7 +246,7 @@ float exTime1, exTime2;
 //-----------------------------------------------------
 // main
     
-vec2 mainSound(float time) {
+vec2 mainSound( in int samp,float time) {
         
     initExplosions(time);
     // align with music

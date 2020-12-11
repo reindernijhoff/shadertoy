@@ -3,7 +3,7 @@
 // @reindernijhoff
 
 // empirical measured values
-#define EYEDISTANCE  5.15 
+#define EYEDISTANCE  1. 
 #define LENSDISTANCE -0.136 
 #define FOV 0.62  
 

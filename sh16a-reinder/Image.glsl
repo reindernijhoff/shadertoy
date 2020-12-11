@@ -26,7 +26,7 @@ void mainImage( out vec4 f, vec2 p ) {
        	V(q.x==q.z?.4:h*texture( iChannel0,.1*P.xz).x) : V(100-8*m,3*m,6*m)*.01;     
 
 	d = Q(V(-6,7,-5));
-    P += 0.01*d;
+    P += .01*d;
     
     c
     

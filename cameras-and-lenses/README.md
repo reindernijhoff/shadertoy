@@ -1,13 +1,9 @@
-﻿# Tokyo
-[View shader on Shadertoy](https://www.shadertoy.com/view/Xtf3zn) - _Published on 2014-12-07_ 
+﻿# Cameras and Lenses
+[View shader on Shadertoy](https://www.shadertoy.com/view/wdyBRV) - _Published on 2020-12-09_ 
 
 ![thumbnail](./thumbnail.jpg)
 
-
-Tokyo by night in the rain. The car model is made by Eiffie
-(Shiny Toy': https://www.shadertoy.com/view/ldsGWB).
-I have never been in Tokyo btw.
-
+Based on the shaders of the excellent article 'Cameras and Lenses' by @BCiechanowski: [URL]https://ciechanow.ski/cameras-and-lenses/[/URL]. Use your mouse to focus.
 ## Shaders
 
 ### Image
@@ -15,7 +11,7 @@ I have never been in Tokyo btw.
 Source: [Image.glsl](./Image.glsl)
 
 ## Links
-* [Tokyo](https://www.shadertoy.com/view/Xtf3zn) on Shadertoy
+* [Cameras and Lenses](https://www.shadertoy.com/view/wdyBRV) on Shadertoy
 * [An overview of all my shaders](https://reindernijhoff.net/shadertoy/)
 * [My public profile](https://www.shadertoy.com/user/reinder) on Shadertoy
 

@@ -28,7 +28,7 @@
 //   raymarching before.
 //
 
-#define AA 1 // Set AA to 2 if you have a fast GPU
+#define AA 1 // Set AA to 1 if you have a slow GPU
 #define PATH_LENGTH 3
 #define MAX_DIST 60.
 #define MIN_DIST .001

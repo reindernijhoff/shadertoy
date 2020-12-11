@@ -246,7 +246,7 @@ float exTime1, exTime2;
 //-----------------------------------------------------
 // main
     
-vec2 mainSound(float time) {
+vec2 mainSound( in int samp,float time) {
     time = mod(time, 60.);
         
     initExplosions(time);

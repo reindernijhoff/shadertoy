@@ -215,7 +215,6 @@ float castRay( in vec3 ro, in vec3 rd, out vec3 oVos, out vec3 oDir ) {
 }
 
 float castVRay( in vec3 ro, in vec3 rd, in float maxDist ) {
-
 	vec3 pos = floor(ro);
 	vec3 ri = 1.0/rd;
 	vec3 rs = sign(rd);
@@ -232,7 +231,6 @@ float castVRay( in vec3 ro, in vec3 rd, in float maxDist ) {
 	}
 	
 	return res;
-
 }
 
 vec3 path( float t ) {

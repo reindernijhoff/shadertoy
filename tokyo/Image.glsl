@@ -4,8 +4,9 @@
 //
 // https://www.shadertoy.com/view/Xtf3zn
 //
-// car model is made by Eiffie
-// shader 'Shiny Toy': https://www.shadertoy.com/view/ldsGWB
+// Tokyo by night in the rain. The car model is made by Eiffie
+// (Shiny Toy': https://www.shadertoy.com/view/ldsGWB). 
+// I have never been in Tokyo btw.
 
 #define BUMPMAP
 #define MARCHSTEPS 128
