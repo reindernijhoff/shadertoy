@@ -3,7 +3,7 @@
 
 ![thumbnail](./thumbnail.jpg)
 
-Based on the shaders of the excellent article 'Cameras and Lenses' by @BCiechanowski: [URL]https://ciechanow.ski/cameras-and-lenses/[/URL]. Use your mouse to focus.
+Based on the shaders of the excellent article 'Cameras and Lenses' by @BCiechanowski: [URL]https://ciechanow.ski/cameras-and-lenses[/URL]. Use your mouse to focus.
 ## Shaders
 
 ### Image
