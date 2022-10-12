@@ -11,7 +11,7 @@
 // Please change AA (line 13) to 1 if this shader is running slow.
 //
 
-#define AA 2
+#define AA 1
 #define FLOOR 0.
 #define BODY 1.
 #define HAIR 2.

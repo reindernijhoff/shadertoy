@@ -357,7 +357,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
             } else {
                 // cloud layer below horizon
                 col = renderCloudLayer(ro, rd, dist);
-                // height based fog, see http://iquilezles.org/www/articles/fog/fog.htm
+                // height based fog, see https://iquilezles.org/articles/fog
                 float fogAmount = HEIGHT_BASED_FOG_C * 
                     (1.-exp( -dist*rd.y*(INV_SCENE_SCALE*HEIGHT_BASED_FOG_B)))/rd.y;
                 col.rgb = mix(col.rgb, getSkyColor(rd)*(1.-col.a), clamp(fogAmount,0.,1.));

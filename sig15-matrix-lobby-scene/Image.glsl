@@ -307,10 +307,10 @@ float intersect( in vec3 ro, in vec3 rd ) {
 #else
         h = map( ro+rd*t );
 #endif
-        if( h < precis ) {
+        if( abs(h) < precis ) {
             return t;
         } 
-        t += h+0.00005*t;
+        t += h;
         if( t > maxdist ) {
             return maxdist;
         }
@@ -329,10 +329,10 @@ float intersectReflection( in vec3 ro, in vec3 rd ) {
     
 	for( int i=0; i < MARCHSTEPSREFLECTION; i++ ) {
         h = map( ro+rd*t );
-        if( h < precis ) {
+        if( abs(h) < precis ) {
             return t;
         } 
-        t += h+0.01*t;
+        t += h;
         if( t > maxdist ) {
             return maxdist;
         }

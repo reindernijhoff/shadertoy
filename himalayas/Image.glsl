@@ -55,7 +55,7 @@
 //
 // [1] https://www.guerrilla-games.com/read/the-real-time-volumetric-cloudscapes-of-horizon-zero-dawn
 // [2] https://media.contentapi.ea.com/content/dam/eacom/frostbite/files/s2016-pbs-frostbite-sky-clouds-new.pdf
-// [3] http://iquilezles.org/www/articles/morenoise/morenoise.htm
+// [3] https://iquilezles.org/articles/morenoise
 //
 
 #define AA 3

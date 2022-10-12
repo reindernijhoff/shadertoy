@@ -14,7 +14,7 @@
 //
 // https://www.shadertoy.com/view/Xds3zN
 //
-// More info here: http://www.iquilezles.org/www/articles/distfunctions/distfunctions.htm
+// More info here: https://iquilezles.org/articles/distfunctions
 //
 
 #define MAT_TABLE    1.

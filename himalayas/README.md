@@ -57,7 +57,7 @@ Finally, in the Image tab, clouds and terrain are combined, a small humanoid is 
 
 [2] https://media.contentapi.ea.com/content/dam/eacom/frostbite/files/s2016-pbs-frostbite-sky-clouds-new.pdf
 
-[3] http://iquilezles.org/www/articles/morenoise/morenoise.htm
+[3] https://iquilezles.org/articles/morenoise
 
 
 
@@ -120,7 +120,7 @@ Source: [Image.glsl](./Image.glsl)
 * [My public profile](https://www.shadertoy.com/user/reinder) on Shadertoy
 * [https://www.guerrilla-games.com/read/the-real-time-volumetric-cloudscapes-of-horizon-zero-dawn](https://www.guerrilla-games.com/read/the-real-time-volumetric-cloudscapes-of-horizon-zero-dawn)
 * [https://media.contentapi.ea.com/content/dam/eacom/frostbite/files/s2016-pbs-frostbite-sky-clouds-new.pdf](https://media.contentapi.ea.com/content/dam/eacom/frostbite/files/s2016-pbs-frostbite-sky-clouds-new.pdf)
-* [http://iquilezles.org/www/articles/morenoise/morenoise.htm](http://iquilezles.org/www/articles/morenoise/morenoise.htm)
+* [https://iquilezles.org/articles/morenoise](https://iquilezles.org/articles/morenoise)
 
 ## License
 

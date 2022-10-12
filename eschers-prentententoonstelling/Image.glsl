@@ -418,7 +418,7 @@ void init() {
 	else if( t < 32. ) zt = 32.-t;
 		
 	deformationScale = clamp(pow(2.0,st), 1., 256.);
-	zoom = 2.8*clamp(pow(2.0,zt), 1.0, 256. );
+	zoom =  2.71828 * clamp(pow(2.0,zt), 1.0, 256. );
 }
 
 void mainImage( out vec4 fragColor, in vec2 fragCoord )

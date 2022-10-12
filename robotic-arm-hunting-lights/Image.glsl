@@ -233,7 +233,7 @@ vec3 sphereCol(in float t) {
 //
 // Very hacky, analytical,  inverse kinematics. I came up with the algorithm myself;
 // Íñigo Quílez can probably implement it without using trigonometry:
-// http://www.iquilezles.org/www/articles/noacos/noacos.htm
+// https://iquilezles.org/articles/noacos
 //
 void initDynamics() {
     time = iTime * .25;

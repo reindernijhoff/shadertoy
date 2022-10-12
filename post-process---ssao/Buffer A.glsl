@@ -195,10 +195,10 @@ float intersect( in vec3 ro, in vec3 rd ) {
 #else
         h = map( ro+rd*t );
 #endif
-        if( h < precis ) {
+        if( abs(h) < precis ) {
             return t;
         } 
-        t += h+0.00005*t;
+        t += h;
         if( t > maxdist ) {
             return maxdist;
         }

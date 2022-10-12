@@ -284,7 +284,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
     p.x *= iResolution.x/ iResolution.y;
 	
     vec2 mo = iMouse.xy / iResolution.xy;
-    if( iMouse.w<=0.00001 ) mo=vec2(0.0);
+    if( iMouse.z < 0. ) mo=vec2(0.0);
 	
 	float time = 2.0*iTime + 50.0*mo.x;
     // camera

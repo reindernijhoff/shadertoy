@@ -3,7 +3,7 @@
 
 ![thumbnail](./thumbnail.jpg)
 
-Simple raytracer showing a lot of spheres and lightsources. A grid is used as an acceleration structure.
+Simple raytracer showing a lot of spheres and light sources. A grid is used as an acceleration structure.
 ## Shaders
 
 ### Image

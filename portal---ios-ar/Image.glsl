@@ -191,7 +191,7 @@ vec3 render( in vec3 ro, in vec3 rd, in vec2 uv, in sampler2D sam, bool inside )
         portalAlpha = 0.;
     }
     
-    // height based fog, see http://iquilezles.org/www/articles/fog/fog.htm
+    // height based fog, see https://iquilezles.org/articles/fog
     const float C = .075;
     const float B = 1.1;
     float fogAmount = clamp(C * exp(-ro.y*B) * (1.-exp( -t*rd.y*B))/rd.y, 0., 4.);

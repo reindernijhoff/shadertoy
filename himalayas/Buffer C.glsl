@@ -119,7 +119,7 @@ vec4 render( in vec3 ro, in vec3 rd ) {
 	 	
         //
         // use a 3-light setup as described by Íñigo Quílez
-        // http://iquilezles.org/www/articles/outdoorslighting/outdoorslighting.htm
+        // https://iquilezles.org/articles/outdoorslighting
         //
 		vec3 lin = (diffuse*shadow*3.) * SUN_COLOR;
 		lin += (ao*ambient)*vec3(0.40,0.60,1.00);
@@ -127,7 +127,7 @@ vec4 render( in vec3 ro, in vec3 rd ) {
 		col *= lin;
         col *= (.6+.4*smoothstep(400.,100.,abs(pos.z))); // dark in the distance
     
-        // height based fog, see http://iquilezles.org/www/articles/fog/fog.htm
+        // height based fog, see https://iquilezles.org/articles/fog
         float fogAmount = HEIGHT_BASED_FOG_C * (1.-exp( -t*rd.y*HEIGHT_BASED_FOG_B))/rd.y;
         col = mix( col, bgcol, fogAmount);
     } else {

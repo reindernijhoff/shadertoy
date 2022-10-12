@@ -375,7 +375,7 @@ mat3 setCamera( in vec3 ro, in vec3 ta ) {
 void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
     vec2 uv = fragCoord/iResolution.xy;
     vec2 mo = iMouse.xy/iResolution.xy - .5;
-    if(iMouse.w <= 0.) {
+    if(iMouse.z <= 0.) {
         mo = vec2( 0.06+.1*sin(iTime*.035), 0. );
     }
     vec3 ro = vec3( 4.*sin(6.0*mo.x), 3. * mo.y + 3.5, -5.5*cos(6.0*mo.x) );

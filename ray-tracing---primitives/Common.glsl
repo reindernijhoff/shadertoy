@@ -10,7 +10,7 @@
 // 
 // As usual, I ended up mostly just copy-pasting code from Íñigo Quílez: 
 // 
-// http://iquilezles.org/www/articles/intersectors/intersectors.htm
+// https://iquilezles.org/articles/intersectors
 // 
 // Please let me know if there are other routines that I should add to this shader.
 // 

@@ -4,7 +4,7 @@
 //
 // https://www.shadertoy.com/view/lsX3DH
 //
-// based on: http://www.iquilezles.org/www/articles/simplepathtracing/simplepathtracing.htm
+// based on: https://iquilezles.org/articles/simplepathtracing
 //
 
 #define MOTIONBLUR

@@ -272,9 +272,9 @@ bool world_hit(const in ray r, const in float t_min,
         rec.mat=white;
 
   	if (hitable_hit(hitable(vec3(556,277.5,277.5), vec3(1,277.5,277.5)),r,t_min,rec.t,rec)) 
-        hit=true, rec.mat=green;
-    if (hitable_hit(hitable(vec3(-1,277.5,277.5), vec3(1,277.5,277.5)),r,t_min,rec.t,rec)) 
         hit=true, rec.mat=red;
+    if (hitable_hit(hitable(vec3(-1,277.5,277.5), vec3(1,277.5,277.5)),r,t_min,rec.t,rec)) 
+        hit=true, rec.mat=green;
    
     if (hitable_hit(hitable(vec3(277.5,556,277.5), vec3(277.5,1,277.5)),r,t_min,rec.t,rec)) 
         hit=true, rec.mat=white;

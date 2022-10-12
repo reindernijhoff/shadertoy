@@ -4,7 +4,7 @@
 ![thumbnail](./thumbnail.jpg)
 
 
-based on: http://www.iquilezles.org/www/articles/simplepathtracing/simplepathtracing.htm
+based on: https://iquilezles.org/articles/simplepathtracing
 
 
 ## Shaders
