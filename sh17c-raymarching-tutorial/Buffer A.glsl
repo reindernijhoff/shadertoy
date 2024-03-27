@@ -266,6 +266,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
         vec4 ro = vec4(0,0,1,0);
 		vec4 ta = vec4(0);
         
+		StoreFVec4( ivec2(0,0), vec4(0), fragColor, uv);
 		StoreFVec4( ivec2(0,3), ro, fragColor, uv);
 		StoreFVec4( ivec2(0,4), ta, fragColor, uv);
     } else if( uv.x < 2 && uv.y < 6) {

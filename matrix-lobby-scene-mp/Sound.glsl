@@ -4,18 +4,12 @@
 // https://www.shadertoy.com/view/MtsXzf
 //
 
-#define HIGHQUALITY 1
-
 #define N(a) if(t>b)x=b;b+=a;
 #define NF(a,c,g) if(t>b){x=b;f=c;v=g;d=a;}b+=a;
 
 //----------------------------------------------------------------------------------------
 
-#define BPM             (140.0)
-#define STEP            (4.0 * BPM / 60.0)
-#define ISTEP           (1./STEP)
 #define LOOPCOUNT		(16.)
-#define STT(t)			(t*(60.0/BPM))
 
 #define PI2 6.283185307179586476925286766559
 

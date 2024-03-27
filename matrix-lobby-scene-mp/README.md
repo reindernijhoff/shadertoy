@@ -25,6 +25,10 @@ Source: [Sound.glsl](./Sound.glsl)
 
  * **iChannel0**: [texture](https://shadertoy.com/media/a/f735bee5b64ef98879dc618b016ecf7939a5756040c2cde21ccb15e69a6e1cfb.png) _(linear, repeat, vflipped)_
 
+### Common
+
+Source: [Common.glsl](./Common.glsl)
+
 ### Image
 
 Source: [Image.glsl](./Image.glsl)

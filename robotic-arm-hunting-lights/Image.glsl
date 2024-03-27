@@ -136,10 +136,10 @@ float iCone( const in vec3 oa, const in vec3 rd, const in vec2 distBound, inout 
     float m3 = dot(rd,ba);
 
     //caps - only top cap needed for scene
-    if (m1 < 0. && dot2(oa*m3-rd*m1)<(ra*ra*m3*m3) ) {
-        float d = -m1/m3;
-        if (d >= distBound.x && d <= distBound.y) {
-            normal = -ba*inversesqrt(m0);
+    if (m2 > 0. && dot2(ob*m3-rd*m2) < (rb*rb*m3*m3) ) {
+        float d = -m2 / m3;
+        if (d > distBound.x && d < distBound.y) {
+            normal = ba*inversesqrt(m0);
             return d;
         }
     }
@@ -456,7 +456,7 @@ vec3 render( in vec3 ro, in vec3 rd) {
                 emitted += (col * (getEmissive(floor(ro.xz), res.z) + .5 * getLighting(ro, normal))) * (1.-F);
                 col *= .5 * F;
             } else {
-                col *= res.z < 4.5 ? vec3(.7,.75,.8) : vec3(.9,.6,.2);   
+                col *= .15;   
             } 
             
             rd = normalize(reflect(rd,normal));

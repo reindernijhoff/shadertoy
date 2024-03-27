@@ -6,17 +6,15 @@
 //
 
 void mainImage( out vec4 f, in vec2 w ) {
-    vec3 d = vec3(w.xy,1)/iResolution-.5, p, c, g=d, o=d;
- 	o.z+=iDate.w*4.;
+    vec3 d = vec3(w.xy,1)/iResolution-.5, p=d-d, o=d;
+ 	
+    o.z+=iDate.w*4.;
+    float i=.0;
+    
+    for( ; i<9. && cos(p.z) - abs(sin(p.x*.7+cos(p.z))) < ++p.y; i+=.01 ) 
+        p = (o += d*i*.05)*.3;
 
-    for( float i=.0; i<9.; i+=.01 ) {
-        p = (c = o += d*i*.05)*.3;
-        if( cos(p.z) - abs(sin(p.x*.7+cos(p.z))) > ++p.y ) {
-	    	g = mix( (3.+p.y) * vec3(.6,.3,0), d, i/9.);
-            break;
-        }
-    }
-    f.xyz = g;
+    f.xyz = mix( (3.+p.y) * vec3(.6,.3,0), d, i/9.);
 }
 
 /* or, in 218 char:
